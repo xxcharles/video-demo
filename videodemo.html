@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>video 标签兼容ie,火狐等</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.bootcss.com/html5media/1.1.8/html5media.js"></script>
     <style>
         .video-wrap{
             background-color: #ddd;
-            width: 100%;
+            width: 800px;
             text-align: center;
         }
         .video-box{
@@ -23,15 +24,24 @@
             object-fit: fill
         }
     </style>
-
-
+<script>
+$(document).ready(function() {
+    play_video_frist = true;
+    $('#id_video').on('canplay', function() {
+        if(play_video_frist){
+            play_video_frist = false;
+            this.currentTime = 15;
+        }
+    });
+});
+</script>
 </head>
 <body>
 <div class="video-wrap">
     <div class="video-box">
-        <video controls autoplay="true" loop="true" preload="auto">
+        <video id="id_video" controls preload="auto">
             <source src="movie/movie.mp4" type="video/mp4">
-            <source src="movie/movie.ogv" type="video/ogg">
+            <!--source src="movie/movie.ogv" type="video/ogg"-->
             <p style="padding: 50px;color:#fff;text-align: center">您的浏览器不支持 HTML5 video 标签。</p>
         </video>
     </div>
