@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('#id_video').on('canplay', function() {
         if(play_video_frist){
             play_video_frist = false;
-            this.currentTime = 15;
+            this.currentTime = 65;
         }
     });
 });
@@ -40,7 +40,7 @@ $(document).ready(function() {
 <div class="video-wrap">
     <div class="video-box">
         <video id="id_video" controls preload="auto">
-            <source src="movie/movie.mp4" type="video/mp4">
+            <source src="movie/SampleVideo_360x240_10mb.mp4" type="video/mp4">
             <!--source src="movie/movie.ogv" type="video/ogg"-->
             <p style="padding: 50px;color:#fff;text-align: center">您的浏览器不支持 HTML5 video 标签。</p>
         </video>
